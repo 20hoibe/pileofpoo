@@ -9,7 +9,7 @@ const app = express();
  */
 const logMiddleware = (req, res, next) => {
   const {method, url, body} = req;
-  console.log(`${method} ${url}: ${JSON.stringify(body)}`);
+  console.log(`${method} ${url}:\n${JSON.stringify(req.headers)}\n${JSON.stringify(body)}`);
   next();
 };
 
@@ -33,7 +33,7 @@ const authMiddleware = (req, res, next) => {
     res.end();
     return;
   }
-
+  
   const token = RegExp.$1;
 
   const userId = userIdByToken.get(token);
@@ -53,7 +53,7 @@ app.post('/user', (req, res) => {
     res.end();
     return;
   }
-
+  
   const token = `token-${Date.now()}`;
 
   const user = {
