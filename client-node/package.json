@@ -1,0 +1,16 @@
+{
+  "name": "pileofpoo-node",
+  "version": "1.0.0",
+  "description": "node poo game client",
+  "main": "poo.js",
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "20hoibe",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.3.3",
+    "commander": "^2.19.0",
+    "node-fetch": "^2.3.0"
+  }
+}
